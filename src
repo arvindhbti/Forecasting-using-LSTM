@@ -84,7 +84,7 @@ predicted_values = sc.inverse_transform(predicted_values)
 
 # Visualising the results
 
-plt.plot(dataset_test['timestamp'],real_stock_price, color = 'red', label = 'Real values')
+plt.plot(dataset_test['timestamp'],dataset_test['Z_RMS_Velocity_MM'], color = 'red', label = 'Real values')
 plt.plot(dataset_test['timestamp'],predicted_values, color = 'blue', label = 'Predicted values')
 plt.title('checking')
 plt.xlabel('Time')
