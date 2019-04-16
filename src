@@ -61,12 +61,9 @@ regressor.fit(X_train, y_train, epochs = 100, batch_size = 8)
 
 
 # Part 3 - Making the predictions and visualising the results
-# Getting the real stock price of 2017
 dataset_test = pd.read_excel('C:/Users/Arvind/Desktop/failure prediction/tg1/brg1_test.xlsx')
 real_stock_price = dataset_test.iloc[:, 1:2].values
 
-
-# Getting the predicted stock price of 2017
 dataset_total = pd.concat((dataset_train['Z_RMS_Velocity_MM'], dataset_test['Z_RMS_Velocity_MM']), axis = 0)
 inputs = dataset_total[len(dataset_total) - len(dataset_test) - 30:].values
 inputs = inputs.reshape(-1,1)
